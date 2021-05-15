@@ -16,12 +16,13 @@ export const GlobalStyle = createGlobalStyle`
     margin: auto;
     font-weight: normal;
     font-family: 'Roboto', sans-serif;
+    background-color: ${({ theme }) => theme.card};
   }
 
 `
 
 export const Wrapper = styled.section`
-	width: 95%;
-	max-width: 1600px;
-	margin: auto;
+  width: 95%;
+  max-width: 2000px;
+  margin: auto;
 `

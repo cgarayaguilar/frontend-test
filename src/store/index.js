@@ -1,14 +1,12 @@
 import React from 'react'
-import useInitialState from 'hooks/useInitialState'
+import useTheme from 'hooks/useTheme.hook'
 
 export const AppContext = React.createContext({})
 
 const AppProvider = ({ children }) => {
-  const initialState = useInitialState()
+  const theme = useTheme()
 
-  return (
-    <AppContext.Provider value={initialState}>{children}</AppContext.Provider>
-  )
+  return <AppContext.Provider value={theme}>{children}</AppContext.Provider>
 }
 
 export default AppProvider

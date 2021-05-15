@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
 // import context provider
-import AppProvider from 'store/authUser.store'
+import AppProvider from 'store/index'
 import { ApolloProvider } from '@apollo/client/react'
 
 import { ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client'
