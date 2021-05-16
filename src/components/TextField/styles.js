@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 export const Wrapper = styled.div`
+  width: 100%;
   border: none;
   display: flex;
   flex-direction: column;
@@ -8,37 +9,38 @@ export const Wrapper = styled.div`
   margin-bottom: ${({ mb }) => (mb ? mb : 0)};
   margin-left: ${({ ml }) => (ml ? ml : 0)};
   margin-right: ${({ mr }) => (mr ? mr : 0)};
+  transition: width 300ms cubic-bezier(0.4, 0, 0.2, 1);
 `
 
 export const Label = styled.label`
+  font-family: Be Vietnam;
   font-style: normal;
-  font-family: 'Roboto', sans-serif;
   font-weight: bold;
   font-size: 16px;
+  line-height: 23px;
   color: ${({ color, theme }) => (color ? color : theme.primaryText)};
   margin-bottom: 5px;
 `
 
 export const TextFieldContainer = styled.fieldset`
-  background: ${({ theme }) => theme.card};
-  border-radius: 8px;
-  border: 1px solid ${({ theme }) => theme.secondaryText};
-  font-size: 1rem;
+  //background: ${({ theme }) => theme.accent2};
+  background-color: #eaeaea;
+  border: none;
+  border-radius: 22px;
   margin: 0;
   position: relative;
-  transition: border-color 0.25s, background-color 0.25s;
   width: 100%;
 
-  &:focus-within {
-    background: ${({ theme }) => theme.card};
-    border-color: ${({ theme }) => theme.primaryText};
-  }
-
   input {
+    font-family: Be Vietnam;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 23px;
+    color: ${({ theme }) => theme.primaryText};
+
     border: none;
     outline: none;
-    padding: 8px;
-    color: ${({ theme }) => theme.primaryText};
+    padding: 8px 8px 8px 40px;
     background-color: transparent;
     width: 100%;
 
@@ -47,6 +49,7 @@ export const TextFieldContainer = styled.fieldset`
     }
 
     &:placeholder {
+      font-weight: 400;
       color: ${({ theme }) => theme.secondaryText};
       opacity: 1;
     }
@@ -56,7 +59,7 @@ export const TextFieldContainer = styled.fieldset`
     color: ${({ theme }) => theme.secondaryText};
 
     position: absolute;
-    right: 0.75rem;
+    left: 0.75rem;
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;

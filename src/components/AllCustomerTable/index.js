@@ -12,6 +12,7 @@ import {
   TableCell,
   Header,
   FilterContainer,
+  PaginatorContainer,
 } from './styles'
 import TextField from 'components/TextField'
 import Typography from 'components/Typography'
@@ -42,8 +43,9 @@ function AllCustomerTable() {
 
   return (
     <Container>
-      <Typography variant="title" value="All customers" mb="8px" />
       <Header>
+        <Typography variant="title2" value="All customers" />
+
         <FilterContainer>
           <TextField
             width={300}
@@ -57,11 +59,6 @@ function AllCustomerTable() {
           />
           <ExportExcel columns={columns} data={filteredData} />
         </FilterContainer>
-
-        <Paginator
-          pageCount={paginatorInfo.totalPages}
-          onPageClick={handlePageClick}
-        />
       </Header>
 
       <Table {...getTableProps()}>
@@ -98,6 +95,13 @@ function AllCustomerTable() {
           })}
         </tbody>
       </Table>
+
+      <PaginatorContainer>
+        <Paginator
+          pageCount={paginatorInfo.totalPages}
+          onPageClick={handlePageClick}
+        />
+      </PaginatorContainer>
     </Container>
   )
 }

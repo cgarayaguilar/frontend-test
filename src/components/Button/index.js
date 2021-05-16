@@ -4,6 +4,7 @@ import { OutLineButton, LinkButton, FilledButton } from './styles'
 export default function Button({
   variant = '',
   children,
+  width = '100%',
   mt,
   mb,
   ml,
@@ -21,6 +22,7 @@ export default function Button({
           mb={mb}
           ml={ml}
           mr={mr}
+          width={width}
           size={size}
           color={color}
           onClick={onClick}
@@ -32,6 +34,7 @@ export default function Button({
     case 'outline':
       return (
         <OutLineButton
+          width={width}
           mt={mt}
           mb={mb}
           ml={ml}
@@ -47,6 +50,7 @@ export default function Button({
     case 'link':
       return (
         <LinkButton
+          width={width}
           mt={mt}
           mb={mb}
           ml={ml}
@@ -63,12 +67,14 @@ export default function Button({
     default:
       return (
         <FilledButton
+          width={width}
           mt={mt}
           mb={mb}
           ml={ml}
           mr={mr}
           size={size}
           color={color}
+          onClick={onClick}
           {...rest}
         >
           {children}

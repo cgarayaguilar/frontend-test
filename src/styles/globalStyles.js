@@ -14,15 +14,21 @@ export const GlobalStyle = createGlobalStyle`
     height: 100%;
     width: 100%;
     margin: auto;
-    font-weight: normal;
-    font-family: 'Roboto', sans-serif;
-    background-color: ${({ theme }) => theme.card};
+    font-family: Be Vietnam;
+    font-style: normal;
+    font-weight: 400;
   }
 
 `
 
 export const Wrapper = styled.section`
-  width: 95%;
+  padding: 0 16px;
   max-width: 2000px;
   margin: auto;
+  width: 100%;
+
+  @media (min-width: 680px) {
+    width: 95%;
+    padding: 0;
+  }
 `

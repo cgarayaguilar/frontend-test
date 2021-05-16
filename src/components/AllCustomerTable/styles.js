@@ -1,32 +1,32 @@
 import styled, { css } from 'styled-components'
 
 const ActiveStyles = css`
-  cursor: pointer;
   background-color: ${({ theme }) => theme.accent2};
   color: ${({ theme }) => theme.primaryText};
 `
 
 export const Container = styled.section`
   margin-top: 64px;
+  max-width: 100vw;
+  overflow: auto;
 `
 
 export const Table = styled.table`
   border-spacing: 0;
   background-color: ${({ theme }) => theme.background};
-  border-radius: 8px;
+  border-radius: 22px;
   width: 100%;
 `
 
 export const TableRowHeader = styled.tr`
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: 700;
+  font-family: Be Vietnam;
+  font-weight: bold;
   font-size: 16px;
   line-height: 23px;
   color: ${({ theme }) => theme.primaryText};
   text-align: left;
   white-space: nowrap;
-  border-radius: 8px;
+  border-radius: 22px;
   padding: 20px;
 
   & > th {
@@ -39,25 +39,30 @@ export const TableRowHeader = styled.tr`
     border-bottom: 1px solid ${({ theme }) => theme.card};
 
     &:first-of-type {
-      border-radius: 8px 0 0 0;
+      border-radius: 22px 0 0 0;
     }
 
     &:last-of-type {
-      border-radius: 0 8px 0 0;
+      border-radius: 0 22px 0 0;
     }
   }
 `
 
 export const TableRow = styled.tr`
-  font-family: Roboto;
-  font-size: 16px;
-  font-style: normal;
+  font-family: Be Vietnam;
   font-weight: normal;
-  line-height: 20px;
+  font-size: 16px;
+  line-height: 26px;
   text-align: left;
   white-space: nowrap;
   padding: 20px;
-  ${({ selected }) => selected && `${ActiveStyles}`}
+  cursor: pointer;
+
+  background-color: ${({ selected, theme }) =>
+    selected ? theme.accent2 : '#fff'};
+
+  color: ${({ selected, theme }) =>
+    selected ? theme.primaryText : theme.secondaryText};
 
   &:hover {
     ${ActiveStyles}
@@ -75,13 +80,31 @@ export const TableCell = styled.td`
 `
 
 export const Header = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 16px;
+  margin-bottom: 16px;
+
+  @media screen and (min-width: 868px) {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
 `
 
 export const FilterContainer = styled.div`
-  width: 500px;
   display: grid;
-  grid-template-columns: 1fr 100px;
+  grid-template-columns: 1fr;
+  @media screen and (min-width: 400px) {
+    grid-template-columns: 1fr min-content;
+  }
+
+  @media screen and (min-width: 1400px) {
+    justify-content: end;
+    grid-template-columns: 500px min-content;
+  }
+  grid-gap: 8px;
+`
+
+export const PaginatorContainer = styled.div`
+  display: flex;
+  justify-content: center;
 `

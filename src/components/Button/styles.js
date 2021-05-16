@@ -1,36 +1,42 @@
 import styled, { css } from 'styled-components'
 
 const Small = css`
-  font-weight: 700;
-  font-size: 14px;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 19px;
 `
 
 const Medium = css`
-  font-weight: 700;
-  font-size: 16px;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 19px;
 `
 
 const Large = css`
-  font-weight: 500;
-  font-size: 20px;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 19px;
 `
 
 const Primitive = css`
-  font-family: 'Roboto', sans-serif;
-  font-weight: 500;
-  font-size: 20px;
+  width: ${({ width }) => (width ? width : '100%')};
+  font-family: Be Vietnam;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
   margin-top: ${({ mt }) => (mt ? mt : 0)};
   margin-bottom: ${({ mb }) => (mb ? mb : 0)};
   margin-left: ${({ ml }) => (ml ? ml : 0)};
   margin-right: ${({ mr }) => (mr ? mr : 0)};
 
-  border-radius: 8px;
+  box-shadow: 0px 15px 15px -10px #ff9f8e;
+  border-radius: 22px;
 
   //text-transform: uppercase;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
   border: none;
   outline: none;
   padding: 8px;

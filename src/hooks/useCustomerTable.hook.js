@@ -89,10 +89,7 @@ export default function useCustomerTable() {
    * @param  {String} {id} // recibe el id de la fila que se marcara como activa
    * @return  {void} =>setRowActive(id
    */
-  const selectRow = ({ id }) => {
-    console.log('Fila activa', id)
-    setRowActive(id)
-  }
+  const selectRow = ({ id }) => setRowActive(id)
 
   //Listado de columnas que se mostraran en la tabla
   const columns = React.useMemo(

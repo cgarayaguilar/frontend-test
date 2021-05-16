@@ -1,14 +1,15 @@
 import styled from 'styled-components'
 
 export const ExportButton = styled.button`
+  width: 100%;
   cursor: pointer;
-  margin-left: 8px;
   border: none;
   outline: none;
-  border-radius: 8px;
+  border-radius: 22px;
   color: #fff;
   background: ${({ theme }) => theme.green};
   display: flex;
+  justify-content: center;
   align-items: center;
   padding: 14px 20px;
   font-size: 18px;

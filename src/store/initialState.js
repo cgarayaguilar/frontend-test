@@ -10,14 +10,16 @@ export const darkTheme = {
 
 export const lightTheme = {
   background: '#fff',
-  background2: '#e5e5e5',
-  backgroundDark: '#23374d',
-  card: '#fafafa',
-  accent: '#4DBCE9',
-  accent2: '#e3f6f5',
-  green: '#16c79a',
-  primaryText: '#000',
-  secondaryText: 'rgba(0, 0, 0, 0.58)',
+  backgroundDark: '#1D1E25',
+  degradedBlack:
+    'linear-gradient(180deg, #2d314d 0%,rgba(45, 49, 77, 0.0001) 100%)',
+  green: '#5DDFC0',
+  card: '#FAFAFA',
+  accent: '#F3603C',
+  accent2: '#FFF0EC',
+  green: '#8FC93A',
+  primaryText: '#242D52',
+  secondaryText: '#8D8D8D',
   error: '#B00020',
 }
 

@@ -1,17 +1,24 @@
 import React from 'react'
 import { Wrapper } from 'styles/globalStyles'
-import RevenuePerProductChart from 'components/RevenuePerProductChart'
-import AllCustomerTable from 'components/AllCustomerTable'
-import { Container } from './styles'
+import { Container, BackgroundImage, BackgroundImageMiddle } from './styles'
+import HeroSection from 'components/HeroSection'
+import AboutUs from 'components/AboutUs'
+import Appbar from 'components/Appbar'
+import Image from 'assets/images/bg-tablet-pattern.svg'
 
 function Home() {
   return (
-    <Container>
-      <Wrapper>
-        <RevenuePerProductChart />
-        <AllCustomerTable />
-      </Wrapper>
-    </Container>
+    <>
+      <Container>
+        <BackgroundImage src={Image} alt="Background Image" />
+        <Appbar />
+        <Wrapper>
+          <HeroSection />
+          <AboutUs />
+        </Wrapper>
+        <BackgroundImageMiddle src={Image} alt="Background Image" />
+      </Container>
+    </>
   )
 }
 
