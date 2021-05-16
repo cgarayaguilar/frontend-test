@@ -12,7 +12,7 @@ function HeroSection() {
   const goToDashboard = () => history.push(DASHBOARD)
 
   return (
-    <Container>
+    <Container id="products">
       <TextContainer>
         <Typography
           variant="title"

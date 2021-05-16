@@ -14,7 +14,7 @@ import randomKey from 'utils/random-key.util'
 
 function AboutUs() {
   return (
-    <Container>
+    <Container id="about">
       <AboutRadix>
         <Typography variant="title2" value="What is Radix Haven?" mb="24px" />
         <Typography

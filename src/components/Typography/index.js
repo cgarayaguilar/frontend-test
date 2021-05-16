@@ -20,7 +20,7 @@ export default function Typography({
   ml,
   mr,
   onClick,
-  align = 'left',
+  align = 'inherit',
 }) {
   switch (variant.toLowerCase()) {
     case 'title':

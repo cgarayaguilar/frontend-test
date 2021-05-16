@@ -36,7 +36,7 @@ function Appbar() {
             <a href="#testimonials" onClick={closeMenu}>
               Testimonials
             </a>
-            <a href="#home" onClick={closeMenu}>
+            <a href="#contact" onClick={closeMenu}>
               Contact Us
             </a>
             <ButtonContainer>

@@ -11,6 +11,7 @@ export default function Button({
   mr,
   size,
   color,
+  textColor = '#fff',
   onClick = () => {},
   ...rest
 }) {
@@ -25,6 +26,7 @@ export default function Button({
           width={width}
           size={size}
           color={color}
+          textColor={textColor}
           onClick={onClick}
           {...rest}
         >
@@ -41,6 +43,7 @@ export default function Button({
           mr={mr}
           size={size}
           color={color}
+          textColor={textColor}
           onClick={onClick}
           {...rest}
         >
@@ -57,6 +60,7 @@ export default function Button({
           mr={mr}
           size={size}
           color={color}
+          textColor={textColor}
           onClick={onClick}
           {...rest}
         >
@@ -74,6 +78,7 @@ export default function Button({
           mr={mr}
           size={size}
           color={color}
+          textColor={textColor}
           onClick={onClick}
           {...rest}
         >

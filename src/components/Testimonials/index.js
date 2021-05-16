@@ -53,7 +53,7 @@ function Testimonials() {
   const goToDashboard = () => history.push(DASHBOARD)
 
   return (
-    <Container>
+    <Container id="testimonials">
       <Wrapper>
         <Typography
           align="center"

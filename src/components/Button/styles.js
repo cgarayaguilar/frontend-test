@@ -81,7 +81,7 @@ export const LinkButton = styled.button`
 export const FilledButton = styled.button`
   ${Primitive}
 
-  background-color: ${({ theme }) => theme.accent};
-  color: #fff;
+  background-color: ${({ theme, color }) => (color ? color : theme.accent)};
+  color: ${({ textColor }) => (textColor ? textColor : '#fff')};
   border: none;
 `

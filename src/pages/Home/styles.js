@@ -21,20 +21,3 @@ export const BackgroundImage = styled.img`
     right: -10%;
   }
 `
-
-export const BackgroundImageMiddle = styled.img`
-  position: absolute;
-  bottom: -10%;
-  left: -10%;
-  z-index: 0;
-  min-width: 244px;
-  max-width: 850px;
-  width: 100%;
-  display: none;
-
-  @media (min-width: 1024px) {
-    display: block;
-    bottom: -30%;
-    left: -30%;
-  }
-`
