@@ -20,32 +20,65 @@ export default function Typography({
   ml,
   mr,
   onClick,
+  align = 'left',
 }) {
   switch (variant.toLowerCase()) {
     case 'title':
       return (
-        <Title mt={mt} ml={ml} mr={mr} mb={mb} color={color} onClick={onClick}>
+        <Title
+          mt={mt}
+          ml={ml}
+          mr={mr}
+          mb={mb}
+          color={color}
+          align={align}
+          onClick={onClick}
+        >
           {value}
         </Title>
       )
 
     case 'title2':
       return (
-        <Title2 mt={mt} mb={mb} ml={ml} mr={mr} color={color} onClick={onClick}>
+        <Title2
+          mt={mt}
+          mb={mb}
+          ml={ml}
+          mr={mr}
+          color={color}
+          align={align}
+          onClick={onClick}
+        >
           {value}
         </Title2>
       )
 
     case 'title3':
       return (
-        <Title3 mt={mt} mb={mb} ml={ml} mr={mr} color={color} onClick={onClick}>
+        <Title3
+          mt={mt}
+          mb={mb}
+          ml={ml}
+          mr={mr}
+          color={color}
+          align={align}
+          onClick={onClick}
+        >
           {value}
         </Title3>
       )
 
     case 'link':
       return (
-        <Link mt={mt} mb={mb} ml={ml} mr={mr} color={color} onClick={onClick}>
+        <Link
+          mt={mt}
+          mb={mb}
+          ml={ml}
+          mr={mr}
+          color={color}
+          align={align}
+          onClick={onClick}
+        >
           {value}
         </Link>
       )
@@ -58,7 +91,15 @@ export default function Typography({
 
     case 'body':
       return (
-        <Body mt={mt} mb={mb} ml={ml} mr={mr} color={color} onClick={onClick}>
+        <Body
+          mt={mt}
+          mb={mb}
+          ml={ml}
+          mr={mr}
+          color={color}
+          align={align}
+          onClick={onClick}
+        >
           {value}
         </Body>
       )
@@ -71,6 +112,7 @@ export default function Typography({
           ml={ml}
           mr={mr}
           color={color}
+          align={align}
           onClick={onClick}
         >
           {value}
@@ -84,6 +126,7 @@ export default function Typography({
           ml={ml}
           mr={mr}
           color={color}
+          align={align}
           onClick={onClick}
         >
           {value}
@@ -92,7 +135,15 @@ export default function Typography({
 
     default:
       return (
-        <Body mt={mt} mb={mb} ml={ml} mr={mr} color={color} onClick={onClick}>
+        <Body
+          mt={mt}
+          mb={mb}
+          ml={ml}
+          mr={mr}
+          color={color}
+          align={align}
+          onClick={onClick}
+        >
           {value}
         </Body>
       )

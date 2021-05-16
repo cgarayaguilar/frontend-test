@@ -4,6 +4,7 @@ const Primitive = css`
   font-family: Be Vietnam;
   font-style: normal;
   font-weight: 400;
+  text-align: ${({ align }) => (align ? align : 'left')};
   margin-top: ${({ mt }) => (mt ? mt : 0)};
   margin-bottom: ${({ mb }) => (mb ? mb : 0)};
   margin-left: ${({ ml }) => (ml ? ml : 0)};

@@ -5,6 +5,7 @@ import HeroSection from 'components/HeroSection'
 import AboutUs from 'components/AboutUs'
 import Appbar from 'components/Appbar'
 import Image from 'assets/images/bg-tablet-pattern.svg'
+import Testimonials from 'components/Testimonials'
 
 function Home() {
   return (
@@ -16,7 +17,8 @@ function Home() {
           <HeroSection />
           <AboutUs />
         </Wrapper>
-        <BackgroundImageMiddle src={Image} alt="Background Image" />
+        <Testimonials />
+        {/*<BackgroundImageMiddle src={Image} alt="Background Image" />*/}
       </Container>
     </>
   )
