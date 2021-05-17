@@ -6,11 +6,17 @@ const ActiveStyles = css`
 `
 
 export const Container = styled.section`
-  margin-top: 64px;
-  max-width: 100vw;
-  overflow: auto;
+  margin-top: 120px;
 `
 
+export const TableContainer = styled.div`
+  max-width: 100vw;
+  overflow: auto;
+
+  @media (min-width: 1366px) {
+    overflow: visible;
+  }
+`
 export const Table = styled.table`
   border-spacing: 0;
   background-color: ${({ theme }) => theme.background};
@@ -36,7 +42,7 @@ export const TableRowHeader = styled.tr`
     padding: 20px 8px;
     vertical-align: top;
     background-color: ${({ theme }) => theme.background};
-    border-bottom: 1px solid ${({ theme }) => theme.card};
+    border-bottom: 3px solid #eaeaea;
 
     &:first-of-type {
       border-radius: 22px 0 0 0;
@@ -58,8 +64,12 @@ export const TableRow = styled.tr`
   padding: 20px;
   cursor: pointer;
 
+  &:nth-child(odd) {
+    background-color: ${({ theme }) => theme.card};
+  }
+
   background-color: ${({ selected, theme }) =>
-    selected ? theme.accent2 : '#fff'};
+    selected && theme.accent2} !important;
 
   color: ${({ selected, theme }) =>
     selected ? theme.primaryText : theme.secondaryText};

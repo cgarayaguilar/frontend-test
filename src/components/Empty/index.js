@@ -1,25 +1,27 @@
 import React from 'react'
-import empty from 'assets/empty.svg'
+import Lottie from 'react-lottie'
+import empty from 'assets/animations/53200-empty-file.json'
+import { Container } from './styles'
+import Typography from 'components/Typography'
 
-export default function EmptyComponent({
-    width = 400,
-    height = 400,
-    text = 'No hay datos',
+export default function WithoutResults({
+  width = 400,
+  height = 250,
+  text = 'No se encontraron resultados',
 }) {
-    const style = {
-        width,
-        height,
-    }
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: empty,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
+    },
+  }
 
-    return (
-        <section className='empty-component'>
-            <img
-                style={style}
-                src={empty}
-                alt='No hay datos'
-                className='empty-component__image'
-            />
-            <p className='empty-component__text'>{text}</p>
-        </section>
-    )
+  return (
+    <Container>
+      <Lottie options={defaultOptions} height={height} width={width} />
+      <Typography variant="title2" color="#8D8D8D" value={text} mt="24px" />
+    </Container>
+  )
 }

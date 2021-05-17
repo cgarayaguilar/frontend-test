@@ -4,13 +4,23 @@ import ErrorComponent from 'components/Error'
 import Highcharts from 'highcharts'
 import HighchartsReact from 'highcharts-react-official'
 import PageLoader from 'loaders/PageLoader'
-import drilldown from 'highcharts/modules/drilldown'
+import { Container, Header, Filter, Option } from './styles'
+import Typography from 'components/Typography'
 
-drilldown(Highcharts)
+require('highcharts/modules/debugger')(Highcharts)
+require('highcharts/modules/accessibility')(Highcharts)
+window.Highcharts = Highcharts
 
 function RevenuePerProductChart() {
-  const { loading, isError, refetchRevenueData, options } =
-    useRevenuePerProduct()
+  const {
+    loading,
+    isError,
+    refetchRevenueData,
+    revenueData,
+    filterBy,
+    Filters,
+    filterActive,
+  } = useRevenuePerProduct()
 
   if (loading) return <PageLoader />
 
@@ -23,80 +33,36 @@ function RevenuePerProductChart() {
       />
     )
 
-  const options2 = {
-    chart: {
-      type: 'area',
-    },
-    title: {
-      text: 'Total Revenue Per Product',
-    },
-    subTitle: {
-      text: '',
-    },
-    xAxis: [
-      {
-        categories: [
-          'Sep-2020',
-          'Oct-2020',
-          'Nov-2020',
-          'Dec-2020',
-          'Jan-2021',
-          'Feb-2021',
-          'Mar-2021',
-          'Apr-2021',
-        ],
-      },
-    ],
-    yAxis: [
-      {
-        title: 'Y-Axis',
-      },
-    ],
-    series: [
-      {
-        type: 'areaspline',
-        name: 'Premium',
-        data: [16716, 4378, 1194, 995, 995, 6182, 3389, 3788],
-      },
-      {
-        type: 'areaspline',
-        name: 'Deluxe',
-        data: [0, 1196, 598, 588, 588, 5384, 2996, 16185],
-      },
-      {
-        type: 'areaspline',
-        name: 'Medium',
-        data: [5841, 3168, 1386, 1188, 1188, 4770, 2780, 3377],
-      },
-      {
-        type: 'areaspline',
-        name: 'Machine Learning',
-        data: [9600, 4350, 1350, 1350, 1350, 1350, 1350, 1350],
-      },
-      {
-        type: 'areaspline',
-        name: 'Business Intelligence',
-        data: [6000, 2800, 800, 800, 800, 800, 800, 800],
-      },
-      {
-        type: 'areaspline',
-        name: 'Start-Up',
-        data: [1922, 1270, 714.3, 564.9, 563.9, 1282.2, 1456.9, 1353],
-      },
-      {
-        type: 'areaspline',
-        name: 'Finance Reporting',
-        data: [2400, 1600, 300, 300, 300, 300, 300, 300],
-      },
-    ],
-  }
-
   return (
-    <section>
-      {options?.chart && (
-        <HighchartsReact highcharts={Highcharts} options={options2} />
+    <Container>
+      <Header>
+        <Typography variant="title2" value="Revenue Per product" />
+
+        <Filter>
+          <Option
+            isActive={filterActive === Filters.TOP_3}
+            onClick={() => filterBy({ option: Filters.TOP_3 })}
+          >
+            Top 3
+          </Option>
+          <Option
+            isActive={filterActive === Filters.TOP_5}
+            onClick={() => filterBy({ option: Filters.TOP_5 })}
+          >
+            Top 5
+          </Option>
+          <Option
+            isActive={filterActive === Filters.TOP_10}
+            onClick={() => filterBy({ option: Filters.TOP_10 })}
+          >
+            Top 10
+          </Option>
+        </Filter>
+      </Header>
+      {revenueData?.chart && Highcharts && (
+        <HighchartsReact highcharts={Highcharts} options={revenueData} />
       )}
-    </section>
+    </Container>
   )
 }
 
