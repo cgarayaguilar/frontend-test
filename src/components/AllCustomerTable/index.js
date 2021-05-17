@@ -105,14 +105,19 @@ function AllCustomerTable() {
           (filteredData.length === 0 && <WithoutResults />)}
       </TableContainer>
 
-      <PaginatorContainer>
-        {Array.isArray(filteredData) && filteredData.length > 0 && (
+      {Array.isArray(filteredData) && filteredData.length > 0 && (
+        <PaginatorContainer>
+          <Typography
+            variant="title3"
+            value={`Total: ${paginatorInfo?.totalRows || '0'}`}
+            mr="24px"
+          />
           <Paginator
             pageCount={paginatorInfo.totalPages}
             onPageClick={handlePageClick}
           />
-        )}
-      </PaginatorContainer>
+        </PaginatorContainer>
+      )}
     </Container>
   )
 }

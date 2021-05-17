@@ -6,6 +6,10 @@ import HighchartsReact from 'highcharts-react-official'
 import PageLoader from 'loaders/PageLoader'
 import { Container, Header, Filter, Option } from './styles'
 import Typography from 'components/Typography'
+import HighchartsAnnotations from 'highcharts/modules/annotations'
+
+/** Setup additional Highcharts modules */
+HighchartsAnnotations(Highcharts)
 
 require('highcharts/modules/debugger')(Highcharts)
 require('highcharts/modules/accessibility')(Highcharts)
@@ -16,10 +20,10 @@ function RevenuePerProductChart() {
     loading,
     isError,
     refetchRevenueData,
-    revenueData,
     filterBy,
     Filters,
     filterActive,
+    chartOptions,
   } = useRevenuePerProduct()
 
   if (loading) return <PageLoader />
@@ -27,9 +31,8 @@ function RevenuePerProductChart() {
   if (isError)
     return (
       <ErrorComponent
+        text="No pudieron cargar los datos de los productos"
         onClick={refetchRevenueData}
-        width="700px"
-        height="700px"
       />
     )
 
@@ -59,9 +62,7 @@ function RevenuePerProductChart() {
           </Option>
         </Filter>
       </Header>
-      {revenueData?.chart && Highcharts && (
-        <HighchartsReact highcharts={Highcharts} options={revenueData} />
-      )}
+      <HighchartsReact highcharts={Highcharts} options={chartOptions} />
     </Container>
   )
 }

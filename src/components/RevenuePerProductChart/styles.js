@@ -4,11 +4,19 @@ export const Container = styled.section``
 
 export const Header = styled.div`
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
   margin: 32px 0;
+  @media (min-width: 768px) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
 `
 
 export const Filter = styled.ul`
+  margin-top: 24px;
   width: 200px;
   height: 50px;
   display: grid;
@@ -18,6 +26,10 @@ export const Filter = styled.ul`
   background-color: #eaeaea;
   border-radius: 22px;
   padding: 2px;
+
+  @media (min-width: 768px) {
+    margin-top: 0;
+  }
 `
 export const Option = styled.li`
   display: flex;

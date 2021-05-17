@@ -6,8 +6,8 @@ import { Container } from './styles'
 import Typography from 'components/Typography'
 
 export default function ErrorComponent({
-  width = 400,
-  height = 400,
+  width = 350,
+  height = 350,
   text = 'No se pudieron obtener los datos',
   onClick = () => {},
 }) {
@@ -29,9 +29,9 @@ export default function ErrorComponent({
   return (
     <Container className="error-component">
       <Lottie options={defaultOptions} height={height} width={width} />
-      <Typography variant="Title" value={text} color="#4d4d4d" mb="32px" />
+      <Typography variant="title3" value={text} color="#4d4d4d" mb="32px" />
       <div className="error-component__cta">
-        <Button color="#3b66b7" variant="filled" onClick={handleClick}>
+        <Button width="200px" variant="filled" onClick={handleClick}>
           Volver a intentar
         </Button>
       </div>

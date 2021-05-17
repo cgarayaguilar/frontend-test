@@ -15,12 +15,12 @@
   margin-right: 16px;
   padding: 5px 10px;
   border-radius: 22px;
-  background-color: #eaeaea;
+  background-color: #fafafa;
   color: #8d8d8d;
 }
 
 .pagination a:hover {
-  background-color: #fff0ec;
+  background: #eaeaea;
 }
 
 .pagination .previous,
@@ -49,7 +49,7 @@
 }
 
 .pagination__link--disabled a {
+  opacity: 0.3;
   color: gray;
-  visibility: hidden;
   border: none;
 }

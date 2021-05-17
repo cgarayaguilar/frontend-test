@@ -24,12 +24,16 @@ export const Label = styled.label`
 
 export const TextFieldContainer = styled.fieldset`
   //background: ${({ theme }) => theme.accent2};
-  background-color: #eaeaea;
+  background-color: #fafafa;
   border: none;
   border-radius: 22px;
   margin: 0;
   position: relative;
   width: 100%;
+  transition: all 0.5s ease;
+  &:focus-within {
+    background-color: #eaeaea;
+  }
 
   input {
     font-family: Be Vietnam;
